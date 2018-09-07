@@ -1,0 +1,71 @@
+{% load static %}
+<aside class="main-sidebar">
+  <!-- sidebar-->
+  <section class="sidebar">
+    
+    <!-- sidebar menu-->
+    <ul class="sidebar-menu" data-widget="tree">
+	  
+      <li class="header nav-small-cap">PERSONAL</li>
+	
+	    <li class="treeview active">
+        <a href="{% url 'dashboard' %}">
+          <i class="ti-dashboard"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+	
+      <li class="header nav-small-cap">MASTER</li>
+	  
+      <li class="treeview">
+        <a href="#">
+          <i class="ti-home"></i> <span>Rooms</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-right pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{% url 'room' %}"><i class="ti-more"></i>View Rooms</a></li>
+          <li><a href="{% url 'room_add' %}"><i class="ti-more"></i>Add Rooms</a></li>
+        </ul>
+      </li>
+
+      <li class="treeview">
+        <a href="#">
+          <i class="ti-mobile"></i> <span>Devices</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-right pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{% url 'device' %}"><i class="ti-more"></i>View Devices</a></li>
+          <li><a href="{% url 'device_add' %}"><i class="ti-more"></i>Add Devices</a></li>
+        </ul>
+      </li>
+	  
+	    <li class="header nav-small-cap">PROFILE</li>
+	  
+      <li class="treeview">
+        <a href="{% url 'edit_profile' %}">
+          <i class="ti-user"></i>
+          <span>Edit Profile</span>
+        </a>
+      </li>
+
+      <li class="treeview">
+        <a href="{% url 'change_password' %}">
+          <i class="ti-key"></i>
+          <span>Change Password</span>
+        </a>
+      </li>
+	  
+	    <li>
+        <a href="{% url 'logout' %}">
+          <i class="ti-power-off"></i>
+		      <span>Log Out</span>
+        </a>
+      </li> 
+      
+    </ul>
+  </section>
+</aside>

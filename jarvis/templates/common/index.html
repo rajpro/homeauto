@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+
+    <title>{{ data.page_title }}</title>
+
+    <!-- Basic Css -->
+    
+	<!-- Bootstrap 4.0-->
+	<link rel="stylesheet" href="{% static 'assets/vendor_components/bootstrap/dist/css/bootstrap.min.css' %}">
+	
+	<!-- Bootstrap extend-->
+	<link rel="stylesheet" href="{% static 'css/bootstrap-extend.css' %}">
+	
+	<!-- Theme style -->
+	<link rel="stylesheet" href="{% static 'css/master_style.css' %}">
+
+	<!-- UltimatePro Admin skins -->
+	<link rel="stylesheet" href="{% static 'css/skins/_all-skins.css' %}">
+
+	<!-- Extra Css -->
+	
+    <!-- c3 CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor_components/c3/c3.min.css' %}">
+	
+	<!-- daterange picker -->	
+	<link rel="stylesheet" href="{% static 'assets/vendor_components/bootstrap-daterangepicker/daterangepicker.css' %}">
+     
+  </head>
+
+<body class="hold-transition skin-primary dark-sidebar sidebar-mini fixed sidebar-collapse">
+<div class="wrapper">
+
+  <!-- header -->
+  {% include "common/header.html" %}
+
+  <!-- Left side column. contains the logo and sidebar -->
+  {% include "common/sidebar.html" %}
+
+  <!-- Content Wrapper. Contains page content -->
+  	<div class="content-wrapper">
+  		<div class="container">
+			<!-- Content Header (Page header) -->  
+			<div class="content-header">
+				<div class="d-flex align-items-center">
+					<div class="mr-auto w-p50">
+						<h3 class="page-title">{{ data.page_title }}</h3>
+					</div>
+				</div>
+				{% if messages %}
+					{% for message in messages %}
+					<div class="alert alert-success alert-dismissible">
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+						{% if message.tags %}
+						<h4><i class="icon fa fa-check"></i> Success!</h4>
+						{{ message }}
+						{% endif %}
+					</div>
+				    {% endfor %}
+				{% endif %}
+			</div>
+			
+			<!-- Main content -->
+			{{ data.dash_index }}
+			<!-- /.content -->
+  		</div>
+	</div>
+
+  <!-- /.content-wrapper -->
+  {% include "common/footer.html" %}
+  
+</div>
+<!-- ./wrapper -->
+  	
+	
+	  
+	<!-- jQuery 3 -->
+	<script src="{% static 'assets/vendor_components/jquery-3.3.1/jquery-3.3.1.js' %}"></script>
+	
+	<!-- popper -->
+	<script src="{% static 'assets/vendor_components/popper/dist/popper.min.js' %}"></script>
+	
+	<!-- Bootstrap 4.0-->
+	<script src="{% static 'assets/vendor_components/bootstrap/dist/js/bootstrap.js' %}"></script>
+	
+	<!-- Slimscroll -->
+	<script src="{% static 'assets/vendor_components/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
+	
+	<!-- date-range-picker -->
+	<script src="{% static 'assets/vendor_components/moment/min/moment.min.js' %}"></script>
+	<script src="{% static 'assets/vendor_components/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+	
+	<!-- Sparkline -->
+	<script src="{% static 'assets/vendor_components/jquery-sparkline/dist/jquery.sparkline.min.js' %}"></script>
+	
+    <!-- C3 Plugins -->
+    <script src="{% static 'assets/vendor_components/c3/d3.min.js' %}"></script>
+    <script src="{% static 'assets/vendor_components/c3/c3.min.js' %}"></script>
+	
+    <!-- eChart Plugins -->
+    <script src="{% static 'assets/vendor_components/echarts/dist/echarts-en.min.js' %}"></script>
+	
+	<!-- FastClick -->
+	<script src="{% static 'assets/vendor_components/fastclick/lib/fastclick.js' %}"></script>
+	
+	<!-- UltimatePro Admin App -->
+	<script src="{% static 'js/template.js' %}"></script>
+	
+	<!-- UltimatePro Admin dashboard demo (This is only for demo purposes) -->
+	<script src="{% static 'js/pages/dashboard3.js' %}"></script>
+	<script src="{% static 'js/pages/chart-dash3-int.js' %}"></script>
+	
+	<!-- UltimatePro Admin for demo purposes -->
+	<script src="{% static 'js/homeauto.js' %}"></script>
+	
+	
+</body>
+</html>

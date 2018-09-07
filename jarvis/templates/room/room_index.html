@@ -1,0 +1,39 @@
+{% load static %}
+<section class="content">
+  	<div class="row">
+		<div class="col-12">
+	  		<div class="box">
+				<div class="box-header">
+					<h4 class="box-title">{{ box_title }} </h4>
+				</div>
+				<div class="box-body">
+					<div class="table-responsive-sm">
+					  <table class="table mb-0">
+						<thead>
+						  <tr>
+							<th scope="col">#</th>
+							<th scope="col">Name</th>
+							<th scope="col">Status</th>
+							<th scope="col">Action</th>
+						  </tr>
+						</thead>
+						<tbody>
+							{% for model in models %}
+							  <tr>
+								<th scope="row">1</th>
+								<td>{{ model.name }}</td>
+								<td>{{ model.status }}</td>
+								<td>
+									<a href="{% url 'room_update' model.id %}" class="btn btn-primary"><span class="ti-pencil-alt"></span></a>
+									<a href="{% url 'room_delete' model.id %}" class="btn btn-primary"><span class="ti-trash"></span></a>
+								</td>
+							  </tr>
+							{% endfor %}
+						</tbody>
+					  </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

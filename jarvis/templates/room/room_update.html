@@ -1,0 +1,33 @@
+{% load static %}
+<section class="content">
+  	<div class="row">
+		<div class="col-12">
+	  		<div class="box">
+				<div class="box-header">
+					<h4 class="box-title">{{ box_title }} </h4>
+				</div>
+				<form method="post" action="{% url 'room_update' model.id %}" class="form-horizontal">
+				{% csrf_token %}
+				<div class="box-body">
+					<div class="form-group">
+						<label>Name</label>
+						<input type="text" name="name" class="form-control" required="" id="id_name" placeholder="Enter Name" value="{{ models.name}}">
+					</div>
+					<div class="form-group">
+						<label>Status</label>
+						<select name="status" class="form-control" id="id_status" selected="{{ models.status}}">
+  							<option value="6">Choose Status</option>
+  							<option value="True">Active</option>
+							<option value="False">Deactive</option>
+						</select>
+					</div>
+				</div>
+				<div class="box-footer">
+					<button type="reset" class="btn btn-default">Reset</button>
+					<button type="submit" class="btn btn-info pull-right">Save</button>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
